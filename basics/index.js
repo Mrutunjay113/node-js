@@ -7,8 +7,8 @@ const url = require("url");
 //FILES
 
 //reading files - blocking, synchronous way
-const data = fs.readFileSync("./input.txt", "utf-8");
-console.log(data);
+const data1 = fs.readFileSync("./input.txt", "utf-8");
+console.log(data1);
 
 //writing files
 const textOut = `This is what we know about the avocado: ${data}.\nCreated on ${Date.now()}`;
@@ -39,18 +39,18 @@ fs.readFile("./input.txt", "utf-8", (err, data) => {
 /////////////////////////////////
 // SERVER
 
-const server = http.createServer((req, res) => {
+const server1 = http.createServer((req, res) => {
   res.end("Hello from the server!");
 });
 
-server.listen(8000, "127.0.0.1", () => {
+server1.listen(8000, "127.0.0.1", () => {
   console.log("listening");
 });
 
 /////////////////////////////////
 // ROUTING
 
-const server = http.createServer((req, res) => {
+const server2 = http.createServer((req, res) => {
   const pathName = req.url;
 
   if (pathName === "/overview" || pathName === "/") {
@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(8000, "127.0.0.1", () => {
+server2.listen(8000, "127.0.0.1", () => {
   console.log("Server is running on port 8000");
 });
 
